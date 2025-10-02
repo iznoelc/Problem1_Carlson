@@ -2,8 +2,10 @@ public class WeddingPlanner {
     // static instance because we only want one wedding planner & initialize it as null
     private static WeddingPlanner instance = null;
 
+    // the wedding that will be planned
     private WeddingPackage wedding;
 
+    // private constructor
     private WeddingPlanner(){ System.out.println("Wedding planner instance created."); }
 
     public static WeddingPlanner getInstance(){
@@ -24,6 +26,10 @@ public class WeddingPlanner {
         return instance;
     }
 
+    /**
+     * Plans a luxury wedding, and then sets the wedding variable to the
+     * luxury wedding it just planned.
+     */
     public void planLuxuryWedding(){
         WeddingFactory weddingFactory = new WeddingFactory();
         wedding = weddingFactory.createWedding("luxury");
@@ -35,6 +41,10 @@ public class WeddingPlanner {
         wedding.printWeddingInfo();
     }
 
+    /**
+     * Plans a traditional wedding, and then sets the wedding variable to the
+     * traditional wedding it just planned.
+     */
     public void planTraditionalWedding(){
         WeddingFactory weddingFactory = new WeddingFactory();
         wedding = weddingFactory.createWedding("traditional");
@@ -46,6 +56,10 @@ public class WeddingPlanner {
         wedding.printWeddingInfo();
     }
 
+    /**
+     * Plans a destination wedding, and then sets the wedding variable to the
+     * destination wedding it just planned.
+     */
     public void planDestinationWedding(){
         WeddingFactory weddingFactory = new WeddingFactory();
         wedding = weddingFactory.createWedding("destination");

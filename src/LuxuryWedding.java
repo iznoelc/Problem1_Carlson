@@ -1,4 +1,7 @@
 public class LuxuryWedding extends WeddingPackage {
+    /**
+     * Print information of luxury wedding to the console.
+     */
     @Override
     public void printWeddingInfo(){
         System.out.println("Planning a luxury wedding...");

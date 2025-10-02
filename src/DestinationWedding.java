@@ -1,4 +1,7 @@
 public class DestinationWedding extends WeddingPackage {
+    /**
+     * Print wedding information of the destination wedding.
+     */
     @Override
     public void printWeddingInfo() {
         System.out.println("Planning a destination wedding...");

@@ -1,4 +1,7 @@
 public class DestinationWeddingBuilder implements WeddingPackageBuilder {
+    // All setters set the attributes for the destination wedding (i.e. catering, decor, etc.)
+    // See WeddingPackageBuilder interface for my more in-depth java docs comments.
+
     private WeddingPackage wedding = new DestinationWedding();
 
     public DestinationWeddingBuilder(WeddingPackage wedding){

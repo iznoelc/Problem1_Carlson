@@ -1,4 +1,7 @@
 public class TraditionalWeddingBuilder implements WeddingPackageBuilder {
+    // All setters set the attributes for the traditional wedding (i.e. catering, decor, etc.)
+    // See WeddingPackageBuilder interface for my more in-depth java docs comments.
+
     private WeddingPackage wedding = new TraditionalWedding();
 
     public TraditionalWeddingBuilder(WeddingPackage wedding){

@@ -1,4 +1,7 @@
 public class LuxuryWeddingBuilder implements WeddingPackageBuilder {
+    // All setters set the attributes for the luxury wedding (i.e. catering, decor, etc.)
+    // See WeddingPackageBuilder interface for my more in-depth java docs comments.
+
     private WeddingPackage wedding = new LuxuryWedding();
 
     public LuxuryWeddingBuilder(WeddingPackage wedding){

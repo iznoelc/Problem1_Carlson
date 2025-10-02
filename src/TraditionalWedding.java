@@ -1,4 +1,7 @@
 public class TraditionalWedding extends WeddingPackage {
+    /**
+     * Print the information for the traditional wedding to the console.
+     */
     @Override
     public void printWeddingInfo() {
         System.out.println("Planning a traditional wedding...");
