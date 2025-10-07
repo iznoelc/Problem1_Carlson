@@ -2,10 +2,10 @@
 Wedding Planning System HW1 problem
 
 ## RESOURCES
-I did not use any outside resources for this problem other than the 
-- Factory slides
-- Week5/Factory,
+- Factory slides, Builder slides, Singleton slides
+- Week4/ThreadSafe-Singleton, Week5/Factory, Week5_2025/Builder_PizzaTopping, Week5_2025/Car_Builder (as reference)
 - Talking to the professor
+- Consulted with Esperanza Paulino to compare how we connected factory and builder after coding it up individually
 
 ## EXPLANATION OF DESIGN CHOICES
 - **Singleton** was used for the wedding planner, as we wanted to ensure there was only one instance of it.
