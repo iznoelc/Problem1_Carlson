@@ -9,23 +9,23 @@ public class TraditionalWeddingBuilder implements WeddingPackageBuilder {
     }
 
     @Override
-    public void setVenueDetails() {
-        wedding.venue.setVenueName("Country Club");
+    public void setVenueDetails(String venueName) {
+        wedding.venue.setVenueName(venueName);
     }
 
     @Override
-    public void setCateringDetails() {
-        wedding.catering.setMenuType("Classic Buffet");
+    public void setCateringDetails(String cateringDetails) {
+        wedding.catering.setMenuType(cateringDetails);
     }
 
     @Override
-    public void setPhotographyDetails() {
-        wedding.photography.setPhotographyType("Local Photographer");
+    public void setPhotographyDetails(String photographyDetails) {
+        wedding.photography.setPhotographyType(photographyDetails);
     }
 
     @Override
-    public void setDecorDetails() {
-        wedding.decorations.setTypeOfFlowers("Classic Roses");
+    public void setDecorDetails(String decorDetails) {
+        wedding.decorations.setTypeOfFlowers(decorDetails);
     }
 
     @Override

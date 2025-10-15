@@ -12,4 +12,15 @@ public class TraditionalWedding extends WeddingPackage {
         System.out.println("Decorations: " + decorations.getTypeOfFlowers());
         System.out.println("----------------------------");
     }
+
+    /**
+     * Set the default attributes of a traditional wedding.
+     */
+    @Override
+    public void setDefaultAttributes() {
+        catering.setMenuType("Classic Buffet");
+        decorations.setTypeOfFlowers("Classic Roses");
+        venue.setVenueName("Country Club");
+        photography.setPhotographyType("Local Photographer");
+    }
 }

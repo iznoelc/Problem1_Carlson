@@ -12,4 +12,15 @@ public class DestinationWedding extends WeddingPackage {
         System.out.println("Decorations: " + decorations.getTypeOfFlowers());
         System.out.println("----------------------------");
     }
+
+    /**
+     * Set the default attributes of a destination wedding.
+     */
+    @Override
+    public void setDefaultAttributes() {
+        catering.setMenuType("Abroad country Sampler");
+        decorations.setTypeOfFlowers("Abroad country's national flowers");
+        venue.setVenueName("Abroad in Europe");
+        photography.setPhotographyType("Travelling photographer");
+    }
 }

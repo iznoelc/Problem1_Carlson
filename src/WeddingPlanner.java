@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class WeddingPlanner {
     // static instance because we only want one wedding planner & initialize it as null
     private static WeddingPlanner instance = null;
@@ -27,47 +29,66 @@ public class WeddingPlanner {
     }
 
     /**
-     * Plans a luxury wedding, and then sets the wedding variable to the
-     * luxury wedding it just planned.
+     * Plans a wedding by creating the wedding based on the type using the weddingFactory, and then returning the correct
+     * type of builder to build this wedding.
+     * @param type, the desired wedding type
+     * @return the correct builder to build the wedding.
      */
-    public void planLuxuryWedding(){
+    public WeddingPackageBuilder planWedding(String type){
         WeddingFactory weddingFactory = new WeddingFactory();
-        wedding = weddingFactory.createWedding("luxury");
+        wedding = weddingFactory.createWedding(type);
 
-        WeddingPackageBuilder builder = new LuxuryWeddingBuilder(wedding);
-        WeddingPackageDirector weddingDirector = new WeddingPackageDirector(builder);
-        weddingDirector.constructWedding();
-
-        wedding.printWeddingInfo();
+        if (type.equalsIgnoreCase("Luxury")){
+            return new LuxuryWeddingBuilder(wedding);
+        } else if (type.equalsIgnoreCase("Destination")){
+            return new DestinationWeddingBuilder(wedding);
+        } else if (type.equalsIgnoreCase("Traditional")){
+            return new TraditionalWeddingBuilder(wedding);
+        } else {
+            throw new IllegalArgumentException("Unknown wedding type");
+        }
     }
 
     /**
-     * Plans a traditional wedding, and then sets the wedding variable to the
-     * traditional wedding it just planned.
+     * Builds the wedding according to user specification
+     * @param builder, determined by planWedding to get the specific builder for desired wedding type.
+     * @return the completed weddingPackage.
      */
-    public void planTraditionalWedding(){
-        WeddingFactory weddingFactory = new WeddingFactory();
-        wedding = weddingFactory.createWedding("traditional");
+    public WeddingPackage buildWedding(WeddingPackageBuilder builder){
+        // preemptively set the default attributes
+        wedding.setDefaultAttributes();
+        Scanner scnr = new Scanner(System.in);
+        String input;
 
-        WeddingPackageBuilder builder = new TraditionalWeddingBuilder(wedding);
-        WeddingPackageDirector weddingDirector = new WeddingPackageDirector(builder);
-        weddingDirector.constructWedding();
+        // get user input for all attributes, where user can choose the specific wedding's default option
+        // if they don't want to specify.
+        System.out.println("Customize your wedding (Enter \"D\" to choose our default option): ");
 
-        wedding.printWeddingInfo();
-    }
+        System.out.println("Enter the name of the venue you want: ");
+        input = scnr.nextLine();
+        if (!input.equalsIgnoreCase("D")){
+            builder.setVenueDetails(input);
+        }
 
-    /**
-     * Plans a destination wedding, and then sets the wedding variable to the
-     * destination wedding it just planned.
-     */
-    public void planDestinationWedding(){
-        WeddingFactory weddingFactory = new WeddingFactory();
-        wedding = weddingFactory.createWedding("destination");
+        System.out.println("Enter the type of catering you want: ");
+        input = scnr.nextLine();
+        if (!input.equalsIgnoreCase("D")){
+            builder.setCateringDetails(input);
+        }
 
-        WeddingPackageBuilder builder = new DestinationWeddingBuilder(wedding);
-        WeddingPackageDirector weddingDirector = new WeddingPackageDirector(builder);
-        weddingDirector.constructWedding();
+        System.out.println("Enter the type of flowers you want: ");
+        input = scnr.nextLine();
+        if (!input.equalsIgnoreCase("D")){
+            builder.setDecorDetails(input);
+        }
 
-        wedding.printWeddingInfo();
+        System.out.println("Enter the photographer you want: ");
+        input = scnr.nextLine();
+        if (!input.equalsIgnoreCase("D")){
+            builder.setPhotographyDetails(input);
+        }
+
+        // return the completed built wedding
+        return wedding;
     }
 }

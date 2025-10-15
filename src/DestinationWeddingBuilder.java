@@ -9,23 +9,23 @@ public class DestinationWeddingBuilder implements WeddingPackageBuilder {
     }
 
     @Override
-    public void setVenueDetails() {
-        wedding.venue.setVenueName("Abroad in Europe");
+    public void setVenueDetails(String venueName) {
+        wedding.venue.setVenueName(venueName);
     }
 
     @Override
-    public void setCateringDetails() {
-        wedding.catering.setMenuType("Europe Sampler");
+    public void setCateringDetails(String cateringDetails) {
+        wedding.catering.setMenuType(cateringDetails);
     }
 
     @Override
-    public void setPhotographyDetails() {
-        wedding.photography.setPhotographyType("Travelling Photographer");
+    public void setPhotographyDetails(String photographyDetails) {
+        wedding.photography.setPhotographyType(photographyDetails);
     }
 
     @Override
-    public void setDecorDetails() {
-        wedding.decorations.setTypeOfFlowers("European Wildflowers");
+    public void setDecorDetails(String decorDetails) {
+        wedding.decorations.setTypeOfFlowers(decorDetails);
     }
 
     @Override

@@ -4,10 +4,10 @@ import WeddingAttributes.Photography;
 import WeddingAttributes.Venue;
 
 public abstract class WeddingPackage {
-    protected Catering catering;
-    protected Decorations decorations;
-    protected Photography photography;
-    protected Venue venue;
+    protected Catering catering = new Catering();
+    protected Decorations decorations = new Decorations();
+    protected Photography photography = new Photography();
+    protected Venue venue = new Venue();
 
     /**
      * Constructor to instantiate all wedding attributes.
@@ -43,4 +43,9 @@ public abstract class WeddingPackage {
      * to the console.
      */
     public abstract void printWeddingInfo();
+
+    /**
+     * Sets the default attributes of a wedding.
+     */
+    public abstract void setDefaultAttributes();
 }
